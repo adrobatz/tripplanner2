@@ -6,11 +6,12 @@ const iconURLs = {
   activities: "http://i.imgur.com/WbMOfMl.png"
 };
 
-const buildMarker = (type, coords) => {
+const buildMarker = (type, coords, name) => {
   if (!iconURLs.hasOwnProperty(type)) {
     type = "activities";
   }
   const markerEl = document.createElement("div");
+  markerEl.setAttribute("id", name);
   markerEl.style.backgroundSize = "contain";
   markerEl.style.width = "32px";
   markerEl.style.height = "37px";
